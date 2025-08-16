@@ -1,8 +1,6 @@
 package tech.good.employeemanager.model;
 import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
-
-import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 
 @Entity
@@ -19,8 +17,7 @@ public class Employee implements Serializable {
     @Column(nullable = false, updatable = false)
     private String EmployeeCode;
 
-    public Employee() {
-    }
+    public Employee() {}
 
     public Employee(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
         Name = name;
@@ -91,10 +88,10 @@ public class Employee implements Serializable {
     public String toString(){
     return"Employee{"+
                 "id="+Id +
-                ", name='"+name +'\''+
+                ", name='"+Name +'\''+
                 ", email='" + email +
-                ", jobTitle='"+jobTitle +'\''+
-                ", phone='"+phone +'\''+
+                ", jobTitle='"+JobTitle +'\''+
+                ", phone='"+Phone +'\''+
                 ", imageUrl='"+imageUrl +'\''+
             '}';
     }
