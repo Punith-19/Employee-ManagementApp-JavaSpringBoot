@@ -31,7 +31,7 @@ export class App implements OnInit{
         console.log(this.employees);
       },
       (error: HttpErrorResponse) => {
-        alert(error.message);
+        console.error(error.message);
       }
     );
   }
