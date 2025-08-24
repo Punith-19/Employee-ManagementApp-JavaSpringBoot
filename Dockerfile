@@ -2,21 +2,19 @@ FROM node:20-alpine AS frontend-builder
 WORKDIR /app/frontend
 
 COPY employeemanagerapp/package.json employeemanagerapp/package-lock.json ./
-
 RUN npm install
 
 COPY employeemanagerapp/ ./
-
 RUN npm run build --prod
-
 FROM maven:3-openjdk-17-slim AS backend-builder
 WORKDIR /app/backend
 
 COPY pom.xml ./
-
-COPY src ./src 
+COPY src ./src
 
 RUN mvn clean package -DskipTests
+
+RUN cp target/*.jar target/employeemanager.jar
 
 FROM openjdk:17-jdk-alpine
 WORKDIR /app
