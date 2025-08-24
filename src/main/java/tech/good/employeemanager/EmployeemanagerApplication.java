@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org. springframework.web.cors. UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.util.Arrays;
 
 import static org.aspectj.weaver.tools.cache.SimpleCacheFactory.path;
 
 @SpringBootApplication
+@EnableTransactionManagement
 public class EmployeemanagerApplication {
 
 	public static void main(String[] args) {

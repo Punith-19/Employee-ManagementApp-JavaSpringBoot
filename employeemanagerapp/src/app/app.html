@@ -53,7 +53,7 @@
           </button>
        </div>
        <div class="modal-body">
-          <form #addForm="ngForm" (ngSubmit)="onAddEmloyee(addForm)">
+          <form #addForm="ngForm" (ngSubmit)="onAddEmployee(addForm)">
           <div class="form-group">
              <label for="name">Name</label>
              <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
@@ -120,7 +120,7 @@
               </div>
               <div class="modal-footer">
                  <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                 <button (click)="onUpdateEmloyee(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                 <button (click)="onUpdateEmployee(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
               </div>
            </form>
         </div>
@@ -141,8 +141,10 @@
         <div class="modal-body">
            <p>Are you sure you want to delete employee {{deleteEmployee?.name}}?</p>
            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-              <button (click)="onDeleteEmloyee(deleteEmployee?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+              <button type="button" class="close" id="delete-employee-modal-close-button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+               </button>
+              <button (click)="onDeleteEmployee(+deleteEmployee?.id!)" class="btn btn-danger">Yes</button>
            </div>
         </div>
      </div>
