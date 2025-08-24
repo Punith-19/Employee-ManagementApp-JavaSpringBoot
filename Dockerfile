@@ -9,7 +9,7 @@ COPY employeemanagerapp/ ./
 
 RUN npm run build --prod
 
-FROM maven:3.9.6-openjdk-17-slim AS backend-builder
+FROM maven:3-openjdk-17-slim AS backend-builder
 WORKDIR /app/backend
 
 COPY pom.xml ./
